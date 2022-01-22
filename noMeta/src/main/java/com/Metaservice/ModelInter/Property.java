@@ -28,4 +28,25 @@ public class Property {
 		this.children = children;
 	}
 	
+	
+	public String getAllChildren (Property property) {
+		String output="";
+		
+		if (property.getChildren()==null) {
+			output= "null";
+		} else {
+			if (property.getChildren().length==0) {
+			output="leer";
+			} else {
+				for (int i=0; i<property.getChildren().length; i++) {
+					output ="Name: " + property.getName() + "; NodeType: " + property.getNodeType() + "; Children: Name:" + property.getChildren()[i].getName() +
+							"; NodeType: " + property.getChildren()[i].getNodeType() + System.lineSeparator();  
+					getAllChildren(property.getChildren()[i]);
+				}
+		
+			}
+		}
+		
+		return output;
+	}
 }
