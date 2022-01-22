@@ -41,20 +41,21 @@ public class Entity {
 		this.properties = properties;
 	}
 	
-	public String output () {
-		String out="";
-		out="Name: " + getName() + "; NodeType: " + getNodeType() + "; PropertySize: " + getProperties_size() + ";" + System.lineSeparator();
-		
-		ListIterator<Property> iter= getProperties().listIterator();
-		
-			while (iter.hasNext()) {
-				Property prop = iter.next();
-				out = out + "Property Name: " + prop.getName() + "; Property Type: " +  prop.getNodeType() + "; Children: " + 
-					 prop.getAllChildren(prop)+ System.lineSeparator();
-			}
-			
-		System.out.println(out);
-		return out;
-	}
+	//public String output () {
+	//	String out="";
+	//	out="Name: " + getName() + "; NodeType: " + getNodeType() + "; PropertySize: " + getProperties_size() + ";" + System.lineSeparator();
+	//	
+	//	ListIterator<Property> iter= getProperties().listIterator();
+	//	
+	//		while (iter.hasNext()) {
+	//			Property prop = iter.next();
+	//			out = out + "Property Name: " + prop.getName() + "; Property Type: " +  prop.getNodeType() + "; Children: "; 
+	//			Property children = prop.getChildren()[0];	 
+	//			out=out + children.getAllChildren(children);
+	//		}
+	//		
+	//	System.out.println(out);
+	//	return out;
+	//}
 	
 }

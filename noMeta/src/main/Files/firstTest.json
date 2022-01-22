@@ -20,10 +20,42 @@
         "size": 2,
         "children": [
           {
-            "name": "[*]",
+            "name": "[A]",
             "nodeType": "NUMBER",
             "size": 0,
             "children": [],
+            "meta": {
+              "count": 66,
+              "missed": 0
+            }
+          }, 
+          {
+            "name": "B",
+            "nodeType": "NUMBER",
+            "size": 0,
+            "children": [
+            {
+            "name": "[B.1]",
+            "nodeType": "NUMBER",
+            "size": 0,
+            "children": [
+            {"name": "[B.1.1]",
+            "nodeType": "String",
+            "size": 0,
+            "children":[]
+            },
+            {"name": "[B.1.2]",
+            "nodeType": "String",
+            "size": 0,
+            "children":[]
+            }
+            ],
+            "meta": {
+              "count": 66,
+              "missed": 0
+            }
+            }
+            ],
             "meta": {
               "count": 66,
               "missed": 0
@@ -44,6 +76,7 @@
           "count": 10,
           "missed": 0
         }
-      }
-     ]}
-    }
+       }
+       ]
+   	}
+   }

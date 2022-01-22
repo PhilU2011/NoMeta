@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Metaservice.ModelInter.Root;
 import com.Metaservice.Services.JsonMapper;
+import com.Metaservice.Services.PropertyRek;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 
@@ -29,8 +30,9 @@ public class MetaController {
 		
 		Root rootObject = new Root();
 		rootObject = JsonMapper.readJsonAsValue(name, Root.class);
+		PropertyRek rek = new PropertyRek();
 		
-		return rootObject.getRootElement().output();
+		return rek.rekAlg(rootObject);
 	}
 	
 	
