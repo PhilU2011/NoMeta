@@ -30,17 +30,24 @@ public class Property {
 	
 	public String allChildren() {
 		String allChildrenOutput="";
-		if (children!= null || children.length>0) {
-			for (int i=0; i<children.length; i++) {
-				if (i==0) {
-				allChildrenOutput= allChildrenOutput+ children[i].getName();
-				}
-				else {
-				allChildrenOutput= allChildrenOutput+ ";" + children[i].getName();	
+		if (children==null) {
+			allChildrenOutput="null";
+		} else {
+			if (children.length==0) {
+				allChildrenOutput="leer";	
+			} else {
+				for (int i=0; i<children.length; i++) {
+					
+					if (i==0) {
+					allChildrenOutput= allChildrenOutput+ children[i].getName();
+					}
+					else {
+					allChildrenOutput= allChildrenOutput+ ";" + children[i].getName();	
+					}
 				}
 			}
 		}
-		
+	
 		return allChildrenOutput;
 	}
 	

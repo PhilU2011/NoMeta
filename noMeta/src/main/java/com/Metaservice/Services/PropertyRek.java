@@ -13,30 +13,42 @@ public class PropertyRek {
 	
 	public PropertyRek () {};
 	
-	public ArrayList<String> getAllChildren (Property pro) {
+	public ArrayList<String> getAllChildren (Property pro, boolean isChildren) {
 		String out="";
+		boolean checkChildren = isChildren;
 		
 		if (pro.getChildren()==null) {
+			if (!isChildren) {
 			out=" PropertyName: " + pro.getName() +"; PropteryType: " + pro.getNodeType() + "; Children: " + "null" + System.lineSeparator();
-			output.add(out);
+			output.add(out);}
+				else {
+					
+				}
 		} else {
 			if (pro.getChildren().length==0) {
+				if (!isChildren) {
 				out= " PropertyName: " + pro.getName() +"; PropteryType: " + pro.getNodeType() + "; Children: " + "leer" + System.lineSeparator();
-				output.add(out);
+				output.add(out);}
+				else {
+				}
 			} else {
 				for (int i=0; i<pro.getChildren().length; i++) {
 					
-					if (i!=0) {
-						out="Children";
-						output.add(out);
-					} else {
+					if (i==0 && !checkChildren) {
 						out=" PropertyName: " + pro.getName() +"; PropteryType: " + pro.getNodeType() + "; Children: " + pro.allChildren() + System.lineSeparator();
 						output.add(out);
-					}
-						out= "Children Name: " + pro.getChildren()[i].getName() + "; Children PropertyType: " + pro.getChildren()[i].getNodeType() + System.lineSeparator();
+					} 
+					if (checkChildren){
+						out="  Children Name: " + pro.getChildren()[i].getName() + "; Children PropertyType: " + pro.getChildren()[i].getNodeType() + 
+						"; Children: " + pro.getChildren()[i].allChildren() + System.lineSeparator();
 						output.add(out);
+					} else {
+						out= "  Children Name: " + pro.getChildren()[i].getName() + "; Children PropertyType: " + pro.getChildren()[i].getNodeType() + 
+								"; Children: " + pro.getChildren()[i].allChildren() + System.lineSeparator();
+						output.add(out);
+					}
+					getAllChildren(pro.getChildren()[i], true);
 					
-					getAllChildren(pro.getChildren()[i]);
 				}
 			}
 		}
@@ -49,17 +61,17 @@ public class PropertyRek {
 		
 		ArrayList<Property> proList = root.getRootElement().getProperties();
 		ListIterator<Property> iter = proList.listIterator();
+		
 		String out="Entity Name: " + root.getRootElement().getName()+ "; Entity Type: " + root.getRootElement().getNodeType() + 
 				"; PropterySize: " + root.getRootElement().getProperties_size() + System.lineSeparator();
 		
-		ListIterator<String> iterString = output.listIterator();
 		String outputRoot=""; 
 		
 		output.add(out);
 		
 		while (iter.hasNext()) {
 			Property property = iter.next();
-			getAllChildren(property);
+			getAllChildren(property,false);
 			}
 		
 		for (int i=0; i<output.size(); i++) {

@@ -59,8 +59,18 @@
             "meta": {
               "count": 66,
               "missed": 0
+              }
+             }, 
+            {
+            "name": "C",
+            "nodeType": "NUMBER",
+            "size": 0,
+            "children": [],
+            "meta": {
+              "count": 66,
+              "missed": 0
             }
-          }
+            }
         ],
         "meta": {
           "count": 10,
@@ -71,7 +81,18 @@
         "name": "firstName",
         "nodeType": "STRING",
         "size": 0,
-        "children": [],
+        "children": [ 
+        {
+            "name": "[A]",
+            "nodeType": "NUMBER",
+            "size": 0,
+            "children": [],
+            "meta": {
+              "count": 66,
+              "missed": 0
+            }
+         }   
+            ],
         "meta": {
           "count": 10,
           "missed": 0

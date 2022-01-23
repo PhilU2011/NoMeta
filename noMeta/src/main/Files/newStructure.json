@@ -1,0 +1,74 @@
+[{ "noMetaName": "String" ,
+   "entities" :[{
+  "name" : "String",
+  "type" : "Book",
+  "key" : "String",
+  "attributes" :[
+  	{
+    "name" : "year",
+    "type" : "Integer"
+  		}, 
+  	{
+    "name" : "Author",
+    "type" : "String",
+    "attributes" : [
+    	{
+    	"name" : "PreName",
+    	"type" : "String",
+    	"attributes" : []
+    	},
+		{
+		"name" : "SurName",
+    	"type" : "String"
+    	},
+     	{
+     	"name" : "age",
+    	"type" : "Integer"
+    	}  
+      ]	
+  	} 
+  ],
+  "relationships" : [{
+  "type" : "reference",
+  "lowerBound" : "Integer",
+  "upperBound" : "Integer",
+  "bidirectional": "boolean",
+  "refersTo" : [
+  	{"key" : "String"},
+  	{"key" : "String"}
+  	]
+  },
+  {
+  "type" : "edge",
+  "edName" : "String",
+  "edAttributes" : [],
+  "sourceEntity": {
+  	"name" : "String",
+  	"type" : "Person"
+  	},
+  "targetEntity": {
+  "name" : "String",
+  "type" : "Person"
+  	}
+  }
+  ]
+  },
+  {
+  "name" : "String",
+  "type" : "Publisher",
+  "key" : "String",
+  "attributes" :[
+  	{
+    "name" : "name",
+    "type" : "String"
+  		}, 
+  	{
+    "name" : "Location",
+    "type" : "String",
+    "attributes" : []
+    	}
+    ]
+    }
+    ]
+   }
+  ]
