@@ -1,6 +1,8 @@
 package com.Metaservice.Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,7 @@ public class MetaController {
 		
 	}
 	
-	@RequestMapping(value="/startAppOne/{name}")
+	@RequestMapping(value="/startAppOne/{name}" , produces="text/plain")
 	@ResponseBody
 	public String readJson (@PathVariable String name) throws StreamReadException, DatabindException, IOException {
 		name= "src/main/Files/" + name + ".json";
@@ -33,7 +35,17 @@ public class MetaController {
 		rootObject = JsonMapper.readJsonAsValue(name, Root.class);
 		PropertyRek rek = new PropertyRek();
 		
-		return rek.rekAlg(rootObject);
+		ArrayList<String> list = rek.rekAlg(rootObject);
+		String out="";
+		ListIterator<String> iter = list.listIterator();
+		
+			while (iter.hasNext()) {
+				String strOutput = iter.next();
+				out = out + strOutput;
+			}
+		
+		
+		return out;
 	}
 	
 	@RequestMapping(value="/startAppTwo/{name}", produces="application/json")
@@ -47,6 +59,8 @@ public class MetaController {
 		
 		JsonNode node = JsonMapper.ObjectToNode(rootObject);
 		output= JsonMapper.NodeToString(node);
+		
+		JsonMapper.ObjectToJson("thirdTest", rootObject, "src/main/Files/");
 		
 		System.out.println(output);
 		return output;

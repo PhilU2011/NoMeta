@@ -57,7 +57,7 @@ public class PropertyRek {
 	}
 	
 	
-	public String rekAlg(Root root) {
+	public ArrayList<String> rekAlg(Root root) {
 		
 		ArrayList<Property> proList = root.getRootElement().getProperties();
 		ListIterator<Property> iter = proList.listIterator();
@@ -81,7 +81,7 @@ public class PropertyRek {
 		
 		System.out.println();
 		System.out.println(outputRoot);
-		return outputRoot;
+		return output;
 	
 	}
 

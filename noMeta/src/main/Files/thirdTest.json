@@ -1,0 +1,52 @@
+{
+  "rootElement" : {
+    "name" : "Person",
+    "nodeType" : "OBJECT",
+    "properties_size" : 9,
+    "properties" : [ {
+      "name" : "birthday",
+      "nodeType" : "STRING",
+      "children" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "nodeType" : "ARRAY",
+      "children" : [ {
+        "name" : "[*]",
+        "nodeType" : "NUMBER",
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "nodeType" : "STRING",
+      "children" : [ ]
+    }, {
+      "name" : "lastName",
+      "nodeType" : "STRING",
+      "children" : [ ]
+    }, {
+      "name" : "gender",
+      "nodeType" : "STRING",
+      "children" : null
+    }, {
+      "name" : "id",
+      "nodeType" : "NUMBER",
+      "children" : [ ]
+    }, {
+      "name" : "email",
+      "nodeType" : "STRING",
+      "children" : [ ]
+    }, {
+      "name" : "ts",
+      "nodeType" : "NUMBER",
+      "children" : [ ]
+    }, {
+      "name" : "knows",
+      "nodeType" : "ARRAY",
+      "children" : [ {
+        "name" : "[*]",
+        "nodeType" : "NUMBER",
+        "children" : [ ]
+      } ]
+    } ]
+  }
+}
