@@ -78,8 +78,6 @@ public class PropertyRek {
 			outputRoot= outputRoot + output.get(i);
 		}
 		
-		
-		System.out.println();
 		System.out.println(outputRoot);
 		return output;
 	

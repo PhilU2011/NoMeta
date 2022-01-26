@@ -2,13 +2,13 @@ package com.Metaservice.ModelMeta;
 
 import java.util.ArrayList;
 
-public class noMeta {
+public class NoMeta {
 
 	private String noName;
 	private ArrayList<EntityMeta> entities;
 	private ArrayList <Relationship> relationships;
 	
-	public noMeta () {}
+	public NoMeta () {}
 
 	public String getNoName() {
 		return noName;

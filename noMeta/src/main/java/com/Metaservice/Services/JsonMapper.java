@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import com.Metaservice.ModelInter.Root;
+import com.Metaservice.ModelMeta.NoMeta;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
@@ -41,6 +43,7 @@ public JsonMapper () {
 	
 	
 	// read several JSON Files as Value and save in one JSON Array file
+	// and return Value List
 	
 	public static <T> ArrayList<T> readSeveralJsonAsValue (String [] filename, Class<T> cl, String saveFile, String savePath) throws StreamReadException, DatabindException, IOException {
 		
@@ -56,7 +59,28 @@ public JsonMapper () {
 		return listObjects;
 	}
 
-	// read one JSON Array File	as Value
+	// read one JSON Array File as Root Value
+	
+	public static Root [] readJsonArrayRootAsValue (String filename) throws IOException{
+		JsonNode node = mapper.readTree(new File (filename));
+		//ArrayList<T []> valueList = new ArrayList<T []> ();
+		
+			Root [] object = mapper.treeToValue(node, Root [].class);
+		
+		return object;
+	}
+	
+	// read one JSON Array als noMeta Value
+	
+	public static NoMeta [] readJsonArrayMetaAsValue (String filename) throws IOException{
+		JsonNode node = mapper.readTree(new File (filename));
+		//ArrayList<T []> valueList = new ArrayList<T []> ();
+		
+			NoMeta [] object = mapper.treeToValue(node, NoMeta [].class);
+		
+		return object;
+	}
+	
 	
 	// read one JSON File as Tree
 	
@@ -67,10 +91,17 @@ public JsonMapper () {
 		
 	}
 	
+	// read one/several JSON Array Files as Tree
 	
-	// read one JSON Array as Tree
-	
-	// read several JSON Files as Tree and transform to Object ArrayList
+		public static JsonNode [] readJsonArrayAsTree (String [] filename) throws IOException {			
+			JsonNode [] nodes = new JsonNode[filename.length];
+			
+			for (int i=0; i<filename.length;i++) {
+				nodes[i] = JsonMapper.readJsonAsNode(filename[i]);	
+			}
+			
+			return nodes;
+		}
 	
 	
 	// read Node zu Object
@@ -96,16 +127,13 @@ public JsonMapper () {
 		return output;
 	}
 	
-	//write Json File from Object to JSON
+	//write from Object to JSON File (also Array JSON File as Input possible here)
 	
 	public static void ObjectToJson (String filename, Object value, String path) throws StreamWriteException, DatabindException, IOException {
-		String ending= ".json";
-		filename=path+filename+ending;
+		String extension= ".json";
+		filename=path+filename+extension;
 		mapper.writerWithDefaultPrettyPrinter().writeValue(new File(filename), value);
 	}
-	
-	
-	//write Json Array File from Objects to JSON
 	
 }
 	
