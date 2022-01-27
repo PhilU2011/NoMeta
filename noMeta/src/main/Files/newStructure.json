@@ -1,8 +1,7 @@
-[{ "noMetaName": "String" ,
+[{ "noName": "String" ,
    "entities" :[{
   "name" : "String",
   "type" : "Book",
-  "key" : "String",
   "attributes" :[
   	{
     "name" : "year",

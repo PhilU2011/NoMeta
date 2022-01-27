@@ -1,0 +1,53 @@
+[{ "noName": "String" ,
+   "entities" :[{
+  "enName" : "String",
+  "type" : "Book",
+  "attributes" :[
+  	{
+    "name" : "year",
+    "type" : "Integer"
+  		}, 
+  	{
+    "name" : "Author",
+    "type" : "String",
+    "attributes" : [
+    	{
+    	"name" : "PreName",
+    	"type" : "String",
+    	"attributes" : []
+    	},
+		{
+		"name" : "SurName",
+    	"type" : "String"
+    	},
+     	{
+     	"name" : "age",
+    	"type" : "Integer"
+    	}  
+      ]	
+  	} 
+  ]},
+  {
+  "enName" : "String2",
+  "type" : "Book2",
+  "attributes" : [
+  	{
+    	"name" : "PrePrePreName",
+    	"type" : "StringXXXX",
+    	"attributes" : [
+    	{"name" : "PrePrePrePrePrePreName",
+    	"type" : "StringXXXXXXXXXXXXX",
+    	"attributes": []
+    		}
+    	]
+    	}
+  ]
+  },
+  {
+  "enName" : "String3",
+  "type" : "Book3",
+  "attributes" : []
+  }],
+  "relationships" : []
+   }
+  ]

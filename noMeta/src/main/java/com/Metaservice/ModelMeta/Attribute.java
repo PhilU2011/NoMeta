@@ -40,4 +40,28 @@ public class Attribute {
 	};
 	
 	
+	public String allAttributes () {
+		String allAttributesOutput="";
+		
+		if (attributes==null) {
+			allAttributesOutput="null";
+		} else {
+			if (attributes.length==0) {
+				allAttributesOutput="leer";	
+			} else {
+				for (int i=0; i<attributes.length; i++) {
+					
+					if (i==0) {
+						allAttributesOutput= allAttributesOutput+ attributes[i].getName();
+					}
+					else {
+						allAttributesOutput= allAttributesOutput+ ";" + attributes[i].getName();	
+					}
+				}
+			}
+		}
+	
+		return allAttributesOutput;
+	}
+	
 }

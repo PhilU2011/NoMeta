@@ -21,8 +21,7 @@ public class PropertyRek {
 			if (!isChildren) {
 			out=" PropertyName: " + pro.getName() +"; PropteryType: " + pro.getNodeType() + "; Children: " + "null" + System.lineSeparator();
 			output.add(out);}
-				else {
-					
+				else {	
 				}
 		} else {
 			if (pro.getChildren().length==0) {

@@ -12,7 +12,19 @@ public class Key {
 
 	public void setKey(Attribute[] key) {
 		this.key = key;
-	};
+	}
 	
+	public String getKeyAsString() {
+		String output="";
+		
+		for (int i=0; i<key.length; i++) {
+			if (i==key.length-1) {
+				output= output + key[i].getName();
+			} else {
+				output= output + key[i].getName()+":";
+			}
+		}
+		return output;
+	}
 	
 }

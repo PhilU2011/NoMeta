@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Metaservice.ModelInter.Root;
+import com.Metaservice.ModelMeta.NoMeta;
 import com.Metaservice.Services.JsonMapper;
+import com.Metaservice.Services.MetaRek;
 import com.Metaservice.Services.PropertyRek;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
@@ -106,6 +108,41 @@ public class MetaController {
 		
 		return output;
  		
+	}
+
+	@RequestMapping(value="/startAppFour/{name}/{text}", produces="application/json")
+	@ResponseBody
+	
+	public String readNoMetaEntity(@PathVariable String name, @PathVariable boolean text) throws IOException {
+		
+		String filename = "src/main/Files/" + name + ".json";
+		NoMeta [] noMeta = JsonMapper.readJsonArrayMetaAsValue(filename);
+		String out="";
+		
+		ArrayList<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
+		
+		if (text==true) {
+			JsonNode nd = JsonMapper.ObjectToNode(noMeta);
+			out = JsonMapper.NodeToString(nd);
+		} else {
+			
+			if (!text) {
+				for (int j=0; j<noMeta.length; j++) {	
+					MetaRek rek = new MetaRek();
+					ArrayList<String> listString = rek.rekAlg(noMeta[j]);
+					
+					list.add(listString);
+				}
+			
+				for (int x=0; x<list.size(); x++) {
+					for (int z=0; z<list.get(x).size();z++) {
+						out= out + list.get(x).get(z);
+					}
+				}	
+			}
+		}	
+		
+		return out;
 	}
 	
 	
