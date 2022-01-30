@@ -15,6 +15,7 @@ import com.Metaservice.ModelMeta.NoMeta;
 import com.Metaservice.Services.JsonMapper;
 import com.Metaservice.Services.MetaRek;
 import com.Metaservice.Services.PropertyRek;
+import com.Metaservice.Services.Transformations;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -144,6 +145,53 @@ public class MetaController {
 		
 		return out;
 	}
+
+
+	@RequestMapping(value="/startAppFive/{name}", produces="application/json")
+	@ResponseBody
+	
+	public String transformInterToNoMeta(@PathVariable String [] name) throws IOException {
+		
+		String path = "src/main/Files/";
+		String extension = ".json";
+		String output="";
+		String save= "sixthTest";
+		
+		// ich lese mehere JSON Files ein
+		
+		for (int i=0; i<name.length; i++) {
+			name[i]=path + name[i] + extension;
+		}
+		
+		// ich mache ein JSON Array File daraus und speichere es
+		// ich parse das JSON Arary File in Root Objekte
+		
+		ArrayList<Root> rootList = JsonMapper.readSeveralJsonAsValue(name, Root.class, save, path);		
+	
+		Transformations trans = new Transformations();
+		
+		Root [] input = new Root[rootList.size()];
+		
+				for (int i=0; i<rootList.size(); i++) {
+					input[i]=rootList.get(i);
+				}
+		
+		// Ich Transformiere Root Objekte in NoMeta Objekt
+		
+				trans.setNoMetaName("Dokument");
+				trans.setRootsInput(input);
+				trans.transEntityInEntityMeta();
+				NoMeta meta = trans.getNoMetaOutput();
+				
+				//trans.getAttributeList();
+		// Ich schreibe das NoMeta Objekt
+				
+				JsonNode nd = JsonMapper.ObjectToNode(meta);
+				output = JsonMapper.NodeToString(nd);
+				
+				return output;
+	}
+	
 	
 	
 }

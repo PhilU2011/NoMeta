@@ -7,46 +7,30 @@
       "name" : "birthday",
       "nodeType" : "STRING",
       "children" : [ ]
-    }, {
+    }, 
+    {
       "name" : "hasInterest",
       "nodeType" : "ARRAY",
       "children" : [ {
         "name" : "[*]",
         "nodeType" : "NUMBER",
-        "children" : [ ]
-      } ]
-    }, {
+        "children" : 
+        [{
       "name" : "firstName",
       "nodeType" : "STRING",
-      "children" : [ ]
-    }, {
-      "name" : "lastName",
-      "nodeType" : "STRING",
-      "children" : [ ]
-    }, {
-      "name" : "gender",
-      "nodeType" : "STRING",
-      "children" : null
-    }, {
-      "name" : "id",
-      "nodeType" : "NUMBER",
-      "children" : [ ]
-    }, {
-      "name" : "email",
-      "nodeType" : "STRING",
-      "children" : [ ]
-    }, {
-      "name" : "ts",
-      "nodeType" : "NUMBER",
-      "children" : [ ]
-    }, {
-      "name" : "knows",
-      "nodeType" : "ARRAY",
-      "children" : [ {
-        "name" : "[*]",
-        "nodeType" : "NUMBER",
-        "children" : [ ]
+      "children" : [{
+      "name" : "firstName Ebene 2",
+      "nodeType" : "STRING Ebene 2",
+      "children" : []
+       },
+       {
+      "name" : "firstName Ebene 2 b",
+      "nodeType" : "STRING Ebene 2 b",
+      "children" : []
+       }
+       ]
+    	}         ]
       } ]
     } ]
-  }
+   }
 }
