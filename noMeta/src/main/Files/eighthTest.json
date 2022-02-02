@@ -1,0 +1,99 @@
+{
+  "noName" : "Dokument",
+  "entities" : [ {
+    "enName" : "Person",
+    "type" : "OBJECT",
+    "attributes" : [ {
+      "name" : "birthday",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[*]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "lastName",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "gender",
+      "type" : "STRING",
+      "attributes" : null
+    }, {
+      "name" : "id",
+      "type" : "NUMBER",
+      "attributes" : [ ]
+    }, {
+      "name" : "email",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "ts",
+      "type" : "NUMBER",
+      "attributes" : [ ]
+    }, {
+      "name" : "knows",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[*]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    } ],
+    "key" : null
+  }, {
+    "enName" : "Person",
+    "type" : "OBJECT",
+    "attributes" : [ {
+      "name" : "birthday",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[A]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      }, {
+        "name" : "B",
+        "type" : "NUMBER",
+        "attributes" : [ {
+          "name" : "[B.1]",
+          "type" : "NUMBER",
+          "attributes" : [ {
+            "name" : "[B.1.1]",
+            "type" : "String",
+            "attributes" : [ ]
+          }, {
+            "name" : "[B.1.2]",
+            "type" : "String",
+            "attributes" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "C",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "type" : "STRING",
+      "attributes" : [ {
+        "name" : "[A]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    } ],
+    "key" : null
+  } ],
+  "relationships" : null
+}

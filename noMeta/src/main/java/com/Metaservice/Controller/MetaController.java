@@ -155,9 +155,9 @@ public class MetaController {
 		String path = "src/main/Files/";
 		String extension = ".json";
 		String output="";
-		String save= "sixthTest";
+		String save= "seventhTest";
 		
-		// ich lese mehere JSON Files ein
+		// ich lese mehere JSON Files ein 
 		
 		for (int i=0; i<name.length; i++) {
 			name[i]=path + name[i] + extension;
@@ -189,9 +189,57 @@ public class MetaController {
 				JsonNode nd = JsonMapper.ObjectToNode(meta);
 				output = JsonMapper.NodeToString(nd);
 				
+				// ich speicher File als JONS		
+				
+				JsonMapper.ObjectToJson("ninethTest", meta, path);
+				
 				return output;
+				
 	}
 	
+
 	
+	
+	
+	// Read one JSON Array File as Root Value
+	
+	@RequestMapping(value="/startAppSix/{name}", produces="application/json")
+	@ResponseBody
+	
+	public String transformArrayInterToNoMeta(@PathVariable String name) throws IOException {
+		
+		String path = "src/main/Files/";
+		String extension = ".json";
+		String output="";
+		String save= "eighthTest";
+		
+		name=path + name+extension;
+		//save= path + save + extension;
+		
+		// ich parse das JSON Arary File in Root Objekte
+		
+		Root [] input = JsonMapper.readJsonArrayRootAsValue(name);
+		
+		// Ich Transformiere Root Objekte in NoMeta Objekt
+		
+		Transformations trans = new Transformations();
+				
+				trans.setNoMetaName("Dokument");
+				trans.setRootsInput(input);
+				trans.transEntityInEntityMeta();
+				NoMeta meta = trans.getNoMetaOutput();
+				
+		// Ich schreibe das NoMeta Objekt
+				
+				JsonNode nd = JsonMapper.ObjectToNode(meta);
+				output = JsonMapper.NodeToString(nd);
+		
+		// ich speicher File als JSON		
+				
+				JsonMapper.ObjectToJson(save, meta, path);
+				
+				return output;
+
+	}
 	
 }

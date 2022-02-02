@@ -55,11 +55,13 @@ public class Transformations {
 			enMeta.setEnName(enRoot.getName());
 			enMeta.setType(enRoot.getNodeType());
 			
+			System.out.println("Entity; " + enMeta.getEnName());
+			
 			//Attributes
 			propList = enRoot.getProperties();			
 			attrList = transformPropInAttr(propList);
 			enMeta.setAttributes(attrList);
-			attributeList=null;
+			attributeList=new ArrayList<Attribute>();
 			//Key
 			
 			

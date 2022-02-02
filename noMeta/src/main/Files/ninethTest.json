@@ -1,0 +1,144 @@
+{
+  "noName" : "Dokument",
+  "entities" : [ {
+    "enName" : "Person",
+    "attributes" : [ {
+      "name" : "birthday",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[A]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      }, {
+        "name" : "B",
+        "type" : "NUMBER",
+        "attributes" : [ {
+          "name" : "[B.1]",
+          "type" : "NUMBER",
+          "attributes" : [ {
+            "name" : "[B.1.1]",
+            "type" : "String",
+            "attributes" : [ ]
+          }, {
+            "name" : "[B.1.2]",
+            "type" : "String",
+            "attributes" : [ ]
+          } ]
+        }, {
+          "name" : "[B.2]",
+          "type" : "NUMBER",
+          "attributes" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "type" : "STRING",
+      "attributes" : [ {
+        "name" : "[AC]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    } ],
+    "type" : "OBJECT",
+    "key" : null
+  }, {
+    "enName" : "Person",
+    "attributes" : [ {
+      "name" : "birthday",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[*]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "lastName",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "gender",
+      "type" : "STRING",
+      "attributes" : null
+    }, {
+      "name" : "id",
+      "type" : "NUMBER",
+      "attributes" : [ ]
+    }, {
+      "name" : "email",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "ts",
+      "type" : "NUMBER",
+      "attributes" : [ ]
+    }, {
+      "name" : "knows",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[*]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    } ],
+    "type" : "OBJECT",
+    "key" : null
+  }, {
+    "enName" : "Person",
+    "attributes" : [ {
+      "name" : "birthday",
+      "type" : "STRING",
+      "attributes" : [ ]
+    }, {
+      "name" : "hasInterest",
+      "type" : "ARRAY",
+      "attributes" : [ {
+        "name" : "[A]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      }, {
+        "name" : "B",
+        "type" : "NUMBER",
+        "attributes" : [ {
+          "name" : "[B.1]",
+          "type" : "NUMBER",
+          "attributes" : [ {
+            "name" : "[B.1.1]",
+            "type" : "String",
+            "attributes" : [ ]
+          }, {
+            "name" : "[B.1.2]",
+            "type" : "String",
+            "attributes" : [ ]
+          } ]
+        }, {
+          "name" : "[B.2]",
+          "type" : "NUMBER",
+          "attributes" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "firstName",
+      "type" : "STRING",
+      "attributes" : [ {
+        "name" : "[AC]",
+        "type" : "NUMBER",
+        "attributes" : [ ]
+      } ]
+    } ],
+    "type" : "OBJECT",
+    "key" : null
+  } ],
+  "relationships" : null
+}
